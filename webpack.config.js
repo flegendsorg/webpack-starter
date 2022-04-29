@@ -9,7 +9,9 @@
         output:{
             path: path.resolve(__dirname, 'dist'),
             filename: '[name][contenthash].js',
+            clean:true,
         }, 
+        devtool: 'source-map',
         devServer:{
             static: {
                 directory: path.resolve(__dirname, 'dist')
