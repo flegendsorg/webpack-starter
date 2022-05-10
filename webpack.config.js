@@ -10,6 +10,7 @@
             path: path.resolve(__dirname, 'dist'),
             filename: '[name][contenthash].js',
             clean:true,
+            assetModuleFilename: '[name][ext]',
         }, 
         devtool: 'source-map',
         devServer:{
@@ -33,6 +34,20 @@
                         'sass-loader'
                     ],
                 },
+                {
+                    test: /\.js$/,
+                    exclude: /node_modules/, 
+                    use: {
+                       loader: 'babel-loader',
+                       options: {
+                           presets: ['@babel/preset-env'],
+                       }
+                    }
+                },
+                {
+                    test: /\.(png|svg|jpg|gif|jpeg)$/i,
+                    type: 'asset/resource'
+                }
             ],
         },
 
