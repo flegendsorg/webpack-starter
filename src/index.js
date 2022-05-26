@@ -12,6 +12,6 @@ function importAll(r) {
   importAll(require.context('./assets/', false, /\.jpg$/));
 
 
-console.log(generateJoke())
-
-console.log(123)
+const jokeBtn = document.getElementById('jokeBtn')
+jokeBtn.addEventListener('click', generateJoke)
+generateJoke()
